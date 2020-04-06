@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/swoosh.png-b050e5bed5a8d9a849037a41283cc15a.stex"
+path="res://.import/a_17.png-282a0dbc95f519b83643181435a6d8bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/swoosh.png"
-dest_files=[ "res://.import/swoosh.png-b050e5bed5a8d9a849037a41283cc15a.stex" ]
+source_file="res://Sprite/Player/a_17.png"
+dest_files=[ "res://.import/a_17.png-282a0dbc95f519b83643181435a6d8bf.stex" ]
 
 [params]
 

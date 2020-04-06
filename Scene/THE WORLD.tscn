@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=2]
+[gd_scene load_steps=161 format=2]
 
 [ext_resource path="res://Scene/Erio.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprite/Wall-1.jpg" type="Texture" id=3]
@@ -472,11 +472,13 @@ extents = Vector2( 8, 312 )
 [sub_resource type="RectangleShape2D" id=156]
 extents = Vector2( 8, 384 )
 
+[sub_resource type="RectangleShape2D" id=157]
+
 [node name="World" type="Node"]
 script = ExtResource( 4 )
 
 [node name="Erio" parent="." instance=ExtResource( 1 )]
-position = Vector2( 204.056, -210.858 )
+position = Vector2( -391.635, 743.489 )
 
 [node name="Stanze" type="Node2D" parent="."]
 position = Vector2( -288, -56 )
@@ -2572,4 +2574,17 @@ shape = SubResource( 156 )
 
 [node name="Wall-1" type="Sprite" parent="Corridoii/Corridoio29/Parete2"]
 scale = Vector2( 0.5, 24 )
+texture = ExtResource( 3 )
+
+[node name="test" type="StaticBody2D" parent="."]
+position = Vector2( 646.086, 1587.13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+position = Vector2( -7.02258, -28.0908 )
+scale = Vector2( 600, 31 )
+shape = SubResource( 157 )
+
+[node name="Sprite" type="Sprite" parent="test/CollisionShape2D"]
+position = Vector2( 0, 3.30279 )
+scale = Vector2( 1, 0.793576 )
 texture = ExtResource( 3 )

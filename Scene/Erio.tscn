@@ -1,9 +1,38 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Sprite/Player/run_02.png" type="Texture" id=1]
 [ext_resource path="res://Script/KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://Sprite/Player/run_01.png" type="Texture" id=3]
+[ext_resource path="res://Sprite/Player/a_09.png" type="Texture" id=4]
+[ext_resource path="res://Sprite/Player/idle_00.png" type="Texture" id=5]
+[ext_resource path="res://Sprite/Player/jump_00.png" type="Texture" id=6]
+[ext_resource path="res://Sprite/Player/run_00.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.32005, 12.4134 )
+extents = Vector2( 148.967, 186.101 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "idle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+} ]
 
 [node name="Erio" type="KinematicBody2D"]
 position = Vector2( 32, -104 )
@@ -12,27 +41,16 @@ collision_layer = 0
 collision/safe_margin = 1.0
 script = ExtResource( 2 )
 
-[node name="Body" type="Node2D" parent="."]
-
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2( 0.18195, 68.6509 )
 shape = SubResource( 1 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 72 )
 current = true
-zoom = Vector2( 0.4, 0.4 )
-
-[node name="RayCasts" type="Node2D" parent="."]
-
-[node name="RayCast2D" type="RayCast2D" parent="RayCasts"]
-position = Vector2( -5.82982, 79.41 )
-enabled = true
-cast_to = Vector2( 0, 3 )
-
-[node name="RayCast2D2" type="RayCast2D" parent="RayCasts"]
-position = Vector2( 4.07784, 79.2935 )
-enabled = true
-cast_to = Vector2( 0, 3 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+zoom = Vector2( 2, 2 )
