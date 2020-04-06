@@ -27,7 +27,7 @@ func _physics_process(delta):
 
 	velocity.y += delta * GRAVITY
 	velocity = move_and_slide(velocity, FLOOR)
-
+#a
 	if is_on_floor():
 		if on_ground == false:
 			on_ground = true
