@@ -19,6 +19,10 @@ config/name="Erio's sad life"
 run/main_scene="res://Scene/THE WORLD.tscn"
 config/icon="res://icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "vnen.tiled_importer" )
+
 [input]
 
 ui_accept={
@@ -62,3 +66,7 @@ ui_down={
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+
+[tiled_importer]
+
+enable_json_format=true
