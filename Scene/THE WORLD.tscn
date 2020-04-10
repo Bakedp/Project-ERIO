@@ -478,7 +478,7 @@ extents = Vector2( 8, 384 )
 script = ExtResource( 4 )
 
 [node name="Erio" parent="." instance=ExtResource( 1 )]
-position = Vector2( -391.635, 743.489 )
+position = Vector2( 228.007, -305.476 )
 
 [node name="Stanze" type="Node2D" parent="."]
 position = Vector2( -288, -56 )
@@ -2577,6 +2577,7 @@ scale = Vector2( 0.5, 24 )
 texture = ExtResource( 3 )
 
 [node name="test" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 646.086, 1587.13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
