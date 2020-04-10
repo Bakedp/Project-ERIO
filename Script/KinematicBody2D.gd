@@ -3,7 +3,9 @@ extends KinematicBody2D
 const SPEED = 450
 const GRAVITY = 2000
 const JUMP_POWER = -700
+const FASTFALL = 900
 const FLOOR = Vector2(0, -1)
+const MAX_JUMPS = 2
 
 var velocity = Vector2()
 var on_ground = false
@@ -24,12 +26,19 @@ func _physics_process(delta):
 		if on_ground == true:
 			$AnimatedSprite.play("idle")
 
-	if Input.is_action_just_pressed("ui_up") && jump_count < 2:
+	if Input.is_action_just_pressed("ui_up") && jump_count < MAX_JUMPS:
 		jump_count += 1
 		velocity.y = JUMP_POWER
-		$AnimatedSprite.play("jumpsquat")
 		on_ground = false
+
+	if Input.is_action_just_pressed("ui_down") && !on_ground:
+		velocity.y = FASTFALL
+
+	#if Input.is_action_just_pressed("ui_accept"):
 		
+
+
+
 
 	velocity.y += delta * GRAVITY
 	velocity = move_and_slide(velocity, FLOOR)
