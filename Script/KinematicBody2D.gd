@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const SPEED = 300
+const SPEED = 450
 const GRAVITY = 2000
-const JUMP_POWER = -800
+const JUMP_POWER = -700
 const FLOOR = Vector2(0, -1)
 
 var velocity = Vector2()
@@ -27,6 +27,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") && jump_count < 2:
 		jump_count += 1
 		velocity.y = JUMP_POWER
+		$AnimatedSprite.play("jumpsquat")
 		on_ground = false
 		
 
