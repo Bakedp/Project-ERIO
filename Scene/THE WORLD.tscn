@@ -13,7 +13,7 @@ extents = Vector2( 24.0029, 45.6036 )
 script = ExtResource( 4 )
 
 [node name="Erio" parent="." instance=ExtResource( 1 )]
-position = Vector2( 259.807, -202.125 )
+position = Vector2( 433.926, -551.375 )
 collision_layer = 1
 
 [node name="Map" parent="." instance=ExtResource( 2 )]

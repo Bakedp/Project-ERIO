@@ -8,10 +8,7 @@
 [ext_resource path="res://Sprite/Player/idle1.png" type="Texture" id=6]
 [ext_resource path="res://Sprite/Player/fall.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.7041, 22.663 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 1 ) ],
 "loop": true,
@@ -34,6 +31,9 @@ animations = [ {
 "speed": 12.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.7041, 22.663 )
+
 [node name="Erio" type="KinematicBody2D"]
 position = Vector2( 32, -104 )
 input_pickable = true
@@ -41,14 +41,10 @@ collision_layer = 0
 collision/safe_margin = 1.0
 script = ExtResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( -14.7049, 79.9444 )
-shape = SubResource( 1 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -13.1627, 66.7089 )
 scale = Vector2( 1.28245, 2.32128 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "idle"
 frame = 1
 playing = true
@@ -57,3 +53,7 @@ playing = true
 position = Vector2( -15, 83 )
 scale = Vector2( 1e-05, 1e-05 )
 current = true
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="."]
+position = Vector2( -14.7049, 79.9444 )
+shape = SubResource( 2 )
