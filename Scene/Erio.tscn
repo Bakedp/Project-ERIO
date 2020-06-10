@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprite/Player/idle2.png" type="Texture" id=1]
 [ext_resource path="res://Script/KinematicBody2D.gd" type="Script" id=2]
@@ -7,9 +7,15 @@
 [ext_resource path="res://Sprite/Player/run2.png" type="Texture" id=5]
 [ext_resource path="res://Sprite/Player/idle1.png" type="Texture" id=6]
 [ext_resource path="res://Sprite/Player/fall.png" type="Texture" id=7]
+[ext_resource path="res://Sprite/Player/slide.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "slide",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
@@ -32,7 +38,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 12.7041, 22.663 )
+extents = Vector2( 10.6414, 19.539 )
 
 [node name="Erio" type="KinematicBody2D"]
 position = Vector2( 32, -104 )
@@ -42,11 +48,10 @@ collision/safe_margin = 1.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -13.1627, 66.7089 )
-scale = Vector2( 1.28245, 2.32128 )
+position = Vector2( -10.5971, 84.729 )
+scale = Vector2( 1.1008, 1.64138 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -55,5 +60,5 @@ scale = Vector2( 1e-05, 1e-05 )
 current = true
 
 [node name="CollisionShape2" type="CollisionShape2D" parent="."]
-position = Vector2( -14.7049, 79.9444 )
+position = Vector2( -11.558, 91.8324 )
 shape = SubResource( 2 )

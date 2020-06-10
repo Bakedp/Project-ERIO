@@ -31,11 +31,16 @@ func _physics_process(delta):
 		velocity.y = JUMP_POWER
 		on_ground = false
 
-	if Input.is_action_just_pressed("ui_down") && !on_ground:
+	if Input.is_action_pressed("ui_down") && !on_ground:
 		velocity.y = FASTFALL
 
-	if Input.is_action_just_pressed("ui_accept"): # tasto per interagire con cose
-		print("use");
+	if Input.is_action_pressed("ui_accept") and is_on_floor() and !$AnimatedSprite.flip_h:
+		$AnimatedSprite.play("slide")
+		velocity.x = SPEED*2
+
+	if Input.is_action_pressed("ui_accept") and is_on_floor() and $AnimatedSprite.flip_h:
+		$AnimatedSprite.play("slide")
+		velocity.x = -SPEED*2
 
 
 	velocity.y += delta * GRAVITY
