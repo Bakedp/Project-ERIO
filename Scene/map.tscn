@@ -470,7 +470,7 @@ extents = Vector2( 8, 312 )
 [sub_resource type="RectangleShape2D" id=156]
 extents = Vector2( 8, 384 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Mappa" type="Node2D"]
 
 [node name="Stanze" type="Node2D" parent="."]
 position = Vector2( -288, -56 )
