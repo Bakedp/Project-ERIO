@@ -10,6 +10,7 @@ const MAX_JUMPS = 2
 var velocity = Vector2()
 var on_ground = false
 var jump_count = 0
+var atrito = SPEED*2
 
 func _physics_process(delta):
 
@@ -34,13 +35,25 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_down") && !on_ground:
 		velocity.y = FASTFALL
 
-	if Input.is_action_pressed("ui_accept") and is_on_floor() and !$AnimatedSprite.flip_h:
+	if Input.is_action_pressed("ui_down") and is_on_floor() and !$AnimatedSprite.flip_h:
 		$AnimatedSprite.play("slide")
 		velocity.x = SPEED*2
+		#while atrito > 1:
+			#if atrito > 1:
+				#atrito -= 1
+				#print(atrito)
+				#velocity.x = atrito
+			#else:
+				#atrito = 0
+				#velocity.x = 0
+				#if on_ground == true:
+					#$AnimatedSprite.play("idle")
 
-	if Input.is_action_pressed("ui_accept") and is_on_floor() and $AnimatedSprite.flip_h:
+	if Input.is_action_pressed("ui_down") and is_on_floor() and $AnimatedSprite.flip_h:
 		$AnimatedSprite.play("slide")
 		velocity.x = -SPEED*2
+		#while velocity.x > 1:
+			#velocity.x -= 1
 
 
 	velocity.y += delta * GRAVITY
